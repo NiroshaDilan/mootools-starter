@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>MooTools</title>
+    <link href="inc/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="inc/js/MooTools-Core-1.6.0.js"></script>
+    <script type="text/javascript" src="inc/js/MooTools-More-1.6.0.js"></script>
+
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+           var myArray = $('body_wrap').getElements('.class_name');
+           var addSpan = $('addtoarray');
+           var addMany = $$('.addMany');
+
+
+           myArray.include(addSpan);
+           myArray.combine(addMany);
+
+           var myArrayFunction = function (item) {
+               item.setStyle('background-color', '#F7KDC6F');
+           }
+
+           myArray.each(myArrayFunction);
+            console.log(myArray);
+        });
+    </script>
+</head>
+<body>
+<div id = "body_wrap">
+    <div class = "class_name">one</div>
+    <div>two</div>
+    <div class = "class_name">three</div>
+    <span id = "addtoarray">add to array</span>
+    <br /><span class = "addMany">one of many</span>
+    <br /><span class = "addMany">two of many</span>
+</div>
+</body>
+
+</html>

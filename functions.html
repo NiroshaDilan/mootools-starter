@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>MooTools</title>
+    <link href="inc/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="inc/js/MooTools-Core-1.6.0.js"></script>
+    <script type="text/javascript" src="inc/js/MooTools-More-1.6.0.js"></script>
+
+    <script type="text/javascript">
+
+        // Define simple_function as a function
+        // var simple_function = function (item) {
+        //     document.write('This is a simple function ' + item);
+        // }
+
+        var two_parameter_retruning_function = function (first, second) {
+            return first + second;
+        }
+
+        window.addEvent('domready', function () {
+           document.write("return value is " + two_parameter_retruning_function(10, 55));
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+
+</html>

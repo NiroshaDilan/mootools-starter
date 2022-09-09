@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>MooTools</title>
+    <link href="inc/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="inc/js/MooTools-Core-1.6.0.js"></script>
+    <script type="text/javascript" src="inc/js/MooTools-More-1.6.0.js"></script>
+
+    <script type="text/javascript">
+
+        // var clickFunction = function () {
+        //     // put whatever you want to happen in here
+        //     document.write('This button element recognizes the click event');
+        // }
+        //
+        // window.addEvent('domready', function () {
+        //     $('id_name').addEvent('click', clickFunction);
+        // });
+
+        // Mouse hover/ enter
+        // var mouseEnterFunction = function () {
+        //     $('result').set('html', "Recognizes the mouse enter event");
+        // }
+        //
+        // window.addEvent('domready', function () {
+        //     $('id_name').removeEvent('mouseleave', mouseEnterFunction);
+        // })
+
+        var keyStrokeEvent = function (event) {
+            var x = event.key;
+            alert("The enter value is : " + x);
+        }
+
+        window.addEvent('domready', function () {
+            $('myTextarea').addEvent('keydown', keyStrokeEvent);
+        });
+
+    </script>
+</head>
+    <body>
+<!--        <input type="button" id="id_name" value="click here"/>-->
+<!--        <label id="result"></label>-->
+<lable for="myTextarea">Write Something:</lable> <br/>
+<textarea id = "myTextarea"> </textarea>
+    </body>
+</html>

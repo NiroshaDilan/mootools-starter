@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>MooTools</title>
+        <link href="inc/css/style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="inc/js/MooTools-Core-1.6.0.js"></script>
+        <script type="text/javascript" src="inc/js/MooTools-More-1.6.0.js"></script>
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="content">
+                <h1>Getting started..</h1>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+
+        var Rectangle = new Class({
+            width: 0,
+            height: 0,
+
+            // methods
+            initialize: function (width, height) {
+                this.width = width;
+                this.height = height;
+            },
+
+            details: function () {
+                document.write("Welcome to MooTools demo program");
+                document.write("Width: " + this.width + " Height: " + this.height);
+            }
+        });
+        var rec = new Rectangle(5, 4);
+        rec.details();
+
+        var div = $$('div');
+        var box = $('content');
+        console.log("Hello world");
+        console.log(div);
+
+        box.set('styles', {
+            'background': '#999',
+            'color': 'white',
+        });
+    </script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>MooTools</title>
+    <link href="inc/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="inc/js/MooTools-Core-1.6.0.js"></script>
+    <script type="text/javascript" src="inc/js/MooTools-More-1.6.0.js"></script>
+
+    </script>
+
+    <script type="text/javascript">
+        window.addEvent('domready', function () {
+            var input = $('filter');
+
+            // set the title attribute of every element
+            // to it's text in lowercase
+            $$('ul > li').each(function (item) {
+                item.set('title', item.get('text').toLowerCase());
+            });
+
+            // the function we'll call when the user types
+            var filterList = function () {
+                var value = input.value.toLowerCase();
+                $$('li').setStyle('display', 'none');
+
+                // check the title attribute if it contains whatever the
+                // user is typing
+                $$('ul > li[title*=]' + value + ']').setStyle('display', '');
+            };
+
+            // make it happen
+            input.addEvent('keyup', filterList);
+        });
+    </script>
+</head>
+<body>
+<p><input id="filter" type="text"/></p>
+<ul>
+    <li>C</li>
+    <li>Cpp</li>
+    <li>Java</li>
+    <li>JavaScript</li>
+    <li>Hadoop</li>
+    <li>Hive</li>
+    <li>CouchDB</li>
+</ul>
+</body>
+
+</html>
